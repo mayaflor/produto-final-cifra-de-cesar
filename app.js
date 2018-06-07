@@ -3,18 +3,18 @@ var word = prompt('Digite uma frase para ser criptografada')
 function cipher(message, amount){
   if (/^[a-zA-Z]/.test(message)) {
     var intoArray = message.split("");
-    var AsciiObject = intoArray.map(l => l.charCodeAt());
-    var AsciiString = AsciiObject.join();
-    var AsciiArray = AsciiString.split(",");
+    var asciiObject = intoArray.map(l => l.charCodeAt());
+    var asciiString = asciiObject.join();
+    var asciiArray = asciiString.split(",");
     var intoCipher = [];
-    for (i = 0; i < AsciiArray.length; i++){
-        if ((AsciiArray[i] >= 65) && (AsciiArray[i] <= 90)){
-        var AsciiCipher = (AsciiArray[i] - 65 + amount) % 26 + 65;
-        intoCipher.push(String.fromCharCode(AsciiCipher));
+    for (i = 0; i < asciiArray.length; i++){
+        if ((asciiArray[i] >= 65) && (asciiArray[i] <= 90)){
+        var asciiCipher = (asciiArray[i] - 65 + amount) % 26 + 65;
+        intoCipher.push(String.fromCharCode(asciiCipher));
       }
-      else if ((AsciiArray[i] >= 97) && (AsciiArray[i] <= 122)){
-        var AsciiCipher = (AsciiArray[i] - 97 + amount) % 26 + 97;
-        intoCipher.push(String.fromCharCode(AsciiCipher));
+      else if ((asciiArray[i] >= 97) && (asciiArray[i] <= 122)){
+        var asciiCipher = (asciiArray[i] - 97 + amount) % 26 + 97;
+        intoCipher.push(String.fromCharCode(asciiCipher));
       }
     }    
     var stringCipher = intoCipher.join();
@@ -28,18 +28,18 @@ function cipher(message, amount){
 function decipher(message, amount){ 
   if (/^[a-zA-Z]/.test(message)) {
     var intoArray = message.split("");
-    var AsciiObject = intoArray.map(l => l.charCodeAt());
-    var AsciiString = AsciiObject.join();
-    var AsciiArray = AsciiString.split(",");
+    var asciiObject = intoArray.map(l => l.charCodeAt());
+    var asciiString = asciiObject.join();
+    var asciiArray = asciiString.split(",");
     var intoDecipher = [];
-    for (i = 0; i < AsciiArray.length; i++){    
-      if ((AsciiArray[i] >= 65) && (AsciiArray[i] <= 90)){
-        var AsciiDecipher = (AsciiArray[i] - 90 - amount) % 26 + 90;
-        intoDecipher.push(String.fromCharCode(AsciiDecipher));
+    for (i = 0; i < asciiArray.length; i++){    
+      if ((asciiArray[i] >= 65) && (asciiArray[i] <= 90)){
+        var asciiDecipher = (asciiArray[i] - 90 - amount) % 26 + 90;
+        intoDecipher.push(String.fromCharCode(asciiDecipher));
       }
-      else if ((AsciiArray[i] >= 97) && (AsciiArray[i] <= 122)){
-        var AsciiDecipher = (AsciiArray[i] - 122 - amount) % 26 + 122;
-        intoDecipher.push(String.fromCharCode(AsciiDecipher));      
+      else if ((asciiArray[i] >= 97) && (asciiArray[i] <= 122)){
+        var asciiDecipher = (asciiArray[i] - 122 - amount) % 26 + 122;
+        intoDecipher.push(String.fromCharCode(asciiDecipher));      
       }
     }   
     var stringDecipher = intoDecipher.join();
